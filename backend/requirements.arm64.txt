@@ -1,0 +1,3 @@
+# psycopg2-binary==2.9.5
+# binary does not include everything for M1 chip, https://stackoverflow.com/a/70661763
+psycopg2==2.9.5

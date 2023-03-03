@@ -1,0 +1,28 @@
+# This file solves some speed issues with the M1 chip in MacOS
+# Run the command like normal but with -f... IE. "docker-compose -f docker-compose.arm64.yaml ..."
+
+version: "3.7"
+
+services:
+  ml:
+    platform: linux/arm64/v8
+    tty: true
+    build:
+      dockerfile: ./Dockerfile.arm64
+    image: alicorn_ml
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+
+  jupyter:
+    platform: linux/arm64/v8
+    image: jupyter/datascience-notebook
+    ports:
+      - 10000:8888
+    volumes:
+      - .:/home/jovyan/work
+      # - static_volume:/app/backend/server/static
+
+volumes:
+  static_volume: {}
