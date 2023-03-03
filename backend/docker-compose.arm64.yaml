@@ -9,7 +9,6 @@ services:
     tty: true
     build:
       dockerfile: ./Dockerfile.arm64
-    image: alicorn_ml
     volumes:
       - .:/app
     ports:
