@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # apps
     'server.apps.endpoints',
+    'server.apps.ml',
+    'server.apps.research',
 ]
 
 MIDDLEWARE = [
